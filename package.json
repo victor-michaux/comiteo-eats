@@ -1,0 +1,45 @@
+{
+    "devDependencies": {
+        "@symfony/stimulus-bridge": "^1.1.0",
+        "@symfony/webpack-encore": "^0.32.0",
+        "babel-eslint": "^10.1.0",
+        "core-js": "^3.0.0",
+        "eslint": "^6.8.0",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-loader": "^3.0.4",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-vue": "^7.0.0",
+        "postcss-loader": "^3.0.0",
+        "regenerator-runtime": "^0.13.2",
+        "vue-loader": "^15.9.6",
+        "vue-server-renderer": "^2.6.12",
+        "vue-template-compiler": "^2.6.12",
+        "webpack-notifier": "^1.6.0"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "dev-server": "encore dev-server --hot",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "NODE_ENV=production encore production --progress",
+        "lint": "eslint --config ./.eslintrc.js --ext .js,.vue ./assets",
+        "lint:fix": "npm run lint -- --fix"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^1.2.34",
+        "@fortawesome/free-solid-svg-icons": "^5.15.2",
+        "@fortawesome/vue-fontawesome": "^2.0.2",
+        "@tailwindcss/postcss7-compat": "^2.0.2",
+        "algoliasearch": "^4.8.3",
+        "autoprefixer": "^9.8.6",
+        "axios": "^0.21.1",
+        "luxon": "^1.25.0",
+        "postcss": "^7.0.35",
+        "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
+        "vue": "^2.6.12",
+        "vue-instantsearch": "^3.4.3",
+        "vue-router": "^3.4.9",
+        "vuex": "^3.6.0"
+    }
+}
