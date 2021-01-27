@@ -1,10 +1,10 @@
 # Test technique Comiteo Vuejs
 
-Dans ce test technique vous allez devoir développer un site de livraison à domicile de plats: ComiteoEats.
+Dans ce test technique vous allez devoir développer un site de livraison à domicile de plats : ComiteoEats.
 
 Le test se déroule en deux temps:
 - Développement du site (Vuejs, Vue Router, Vuex, API)
-- Amélioration du site avec des technologie et méchaniques avancées (Algolia, composants renderless, composants headless)
+- Amélioration du site avec des technologies et méchaniques avancées (Algolia, composants renderless, composants headless)
 
 Dans un but d'efficacité, des librairies JS sont déjà installées: Vue, Vue-Router, Vuex, Axios, Algolia, Fontawesome, Luxon, TailwindCSS, Eslint. 
 ## Partie 1
@@ -14,70 +14,77 @@ But: Création d'une page qui liste tous les restaurants.
 
 L'url de la page doit être `/`.
 
-La liste des restaurant est récupérable avec ce [endpoint](#la-liste-des-restaurants) API.
+La liste des restaurants est récupérable avec ce [endpoint](#la-liste-des-restaurants) API.
 
-Pour chaque restaurant de la liste il faut afficher:
+Pour chaque restaurant de la liste il faut afficher :
 - le nom
+- la ville
 - l'image de profil
 - la catégorie
 - la note
 
-Il faut afficher la liste des restaurant sous forme de grille (2 colonnes).
+Il faut afficher la liste des restaurants sous forme de grille (2 colonnes).
+
+Voici un exemple de design
+![maquette index_restaurant_colonne](./colonne@2x.jpg)
 
 ### Etape B
-But: Création d'une page qui affiche les informations d'un restaurant.
+But : Création d'une page qui affiche les informations d'un restaurant.
 
 L'url de la page doit être `/restaurants/{id}`
 
-Il faut afficher:
+Il faut afficher :
 - le nom
 - l'adresse
 - la note
-- le menu: chaque plat doit etre dans une section (entrées, plats, désserts, boissons) et afficher son prix (**le prix récupérer par l'API est en centimes**)
+- le menu: chaque plat doit être dans une section (entrées, plats, desserts, boissons) et afficher son prix (**le prix récupéré par l'API est en centimes**)
 
+
+Voici un exemple de design
+![maquette un restaurant](./un_restaurant@2x.jpg)
 ### Etape C
-But: création d'une barre de navigation
+But : création d'une barre de navigation
 
 Ajouter le nom du site dans la barre de navigation.
-Au clique sur le nom, l'utilisateur est redirigé sur la page de la liste des restaurants.
+Au clic sur le nom, l'utilisateur est redirigé sur la page de la liste des restaurants.
 
 ### Etape D
-But: Ajouter des plats au panier
+But : Ajouter des plats au panier
 
 Utilisation de Vuex pour enregistrer les différents plats ajoutés au panier. 
 Il est possible d'ajouter des plats de restaurants différents.
 
 ### Etape E
-But: création de la page du panier
+But : création de la page du panier
 
-- Il faut ajouter une icone panier dans la barre de navigation (fontawesome)
-- Au clique sur cette icone, l'utilisateur est redirigé sur la page du panier
+- Il faut ajouter une icône panier dans la barre de navigation (fontawesome)
+- Au clic sur cette icône, l'utilisateur est redirigé sur la page du panier
 
 l'url de la page du panier doit être `/cart`
 
-Sur cette page doit apparaître la liste des plats ajoutés ainsi qu'un formulaire pour demander les informations de livraison:
-- Prenom
+Sur cette page doit apparaître la liste des plats ajoutés ainsi qu'un formulaire pour demander les informations de livraison :
+- Prénom
 - Nom
 - Adresse (numéro + nom de rue, code postal, ville)
 
-Un bouton doit permettre de créer la commande via un appel API sur ce [endpoint](#crer-une-commande). 
+Un bouton doit permettre de créer la commande via un appel API sur ce [endpoint](#créer-une-commande). 
 
 ### Etape F
-But: Création de la page de validation de la commande
+But : Création de la page de validation de la commande
 
 L'url de la page doit être `/order_recap`
 
 Une fois la commande créée il faut rediriger l'utilisateur sur la page validation de la commande.
 
-Sur cette page doit être affiché:
-- Prenom
+Sur cette page doivent être affichés :
+- Prénom
 - Nom
 - Adresse de livraison
 - Liste des plats (nom et quantité)
 - Sous-total des plats
 - Montant des frais de livraison
 - Montant total de la commande
-- Le temps d'attente estimé avec la date et l'heure d'estimation de livraison (utilisation de la librairie Luxon). Date et heure au format 20/02/2021 16h36.
+- Le temps d'attente estimé pour la livraison (utilisation de la librairie Luxon). Date et heure au format 20/02/2021 16h36.
 
 ## Partie 2
 
@@ -87,12 +94,13 @@ Dans cette partie il n'y a pas d'étapes, uniquement différents exercices, ind�
 
 Il faut ajouter dans la page d'index des restaurants une bannière (au dessus des résultats) qui affiche le restaurant mis en avant.
 
-Pour obtenir les inforation du restaurant mis en avant il faut intéroger ce [endpoint](#rcuprer-le-restaurant-mis-en-avant) API.
+Pour obtenir les informations du restaurant mis en avant il faut interroger ce [endpoint](#récupérer-le-restaurant-mis-en-avant) API.
 
-Il faut changer de restaurant mis en avant a chaque fois que l'on arrive sur cette page et au minimum 1 fois toute les 20 secondes.
+Il faut changer de restaurant mis en avant à chaque fois que l'on arrive sur cette page et au minimum 1 fois toutes les 20 secondes.
 
 L'affichage de la bannière n'est pas le même en fonction du type de restaurant (asian, fast_food, italian).
 
+On souhaite avoir un composant par type de restaurant, et un composant maître qui choisit le bon à afficher en fonction du type.
 Il est attendu l'implémentation d'un composant switch qui va permettre de rendre le composant correspondant au type de restaurant.
 
 ### Algolia sur la page d'index des restaurants
@@ -112,19 +120,22 @@ Il faut implémenter:
 
 Il faut ajouter la sélection du mode de livraison (vélo, scooter, etc).
 
-La liste des différents mode de livraison sont disponible via ce [endpoint](#la-liste-des-mthodes-de-livraison) API.
+La liste des différents modes de livraison est disponible via ce [endpoint](#la-liste-des-méthodes-de-livraison) API.
 
 Le but de cet exercice est de construire un/des composant(s) headless: très peu de template, uniquement de la logique js(scopedSlot). 
 
-Ce composant va devoir etre utilisé pour créer le composant final de sélection de la méthode de livraison.
+Ce(s) composants va devoir être utilisé pour créer le composant final de sélection de la méthode de livraison.
 
-Il faut ensuite ajouté ce composant dans la page du panier pour que l'utilisateur puisse choisir son mode de livraison.
+Il faut ensuite ajouter ce composant dans la page du panier pour que l'utilisateur puisse choisir son mode de livraison.
 
-### Changer a la volée l'affichage des restaurant sur la page d'index des restaurants
+### Changer à la volée l'affichage des restaurants sur la page d'index des restaurants
 
-Cet exercice peut etre fait de deux manière: avec ou sans le composant headless créé dans l'exercice précédant.
+Cet exercice peut être fait de deux manières : avec ou sans le composant headless créé dans l'exercice précédent.
 
 Il faut créer un système qui permet de sélectionner l'affichage des restaurants en vue liste ou grille (la présentation actuelle) dans la page d'index des restaurants.
+
+Voici un exemple de design
+![maquette_index_restaurant_ligne](./ligne@2x.jpg)
 
 ## Doc API
 URL: `comiteo-eats.victormx.com`
@@ -137,7 +148,7 @@ URL: `comiteo-eats.victormx.com`
 
 [GET] `/api/restaurants/{id}`
 
-### Donner une note a un restaurant
+### Donner une note à un restaurant
 
 [POST] `/api/restaurants/{id}/ratings`
 
