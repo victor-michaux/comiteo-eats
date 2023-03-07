@@ -24,9 +24,18 @@
             </header>
     
             <main>
-                <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-                    <div class="px-4 py-6 sm:px-0">
-                        Hello!!!
+                <div class="mx-auto max-w-4xl py-6 sm:px-6 lg:px-8">
+                    <div class="flex flex-wrap -mx-1 lg:-mx-4">
+        
+                        <!-- Column -->
+                        <div
+                            v-for="restaurant in restaurants"
+                            :key="restaurant.name"
+                            class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/2"
+                        >
+                            <restaurant-card />
+                        </div>
+                        <!-- END Column -->
                     </div>
                 </div>
             </main>
@@ -35,10 +44,17 @@
 </template>
 
 <script>
+import RestaurantCard from './components/restaurant-card.vue';
+import { getRestaurants } from './services/restaurants-service';
+
 export default {
     name: 'App',
+    components: {
+        RestaurantCard,
+    },
     data() {
         return {
+            restaurants: [],
             user: {
                 name: 'Tom Cook',
                 email: 'tom@example.com',
@@ -58,6 +74,13 @@ export default {
                 { name: 'Sign out', href: '#' },
             ],
         };
+    },
+    async created() {
+        const response = await getRestaurants();
+        
+        console.log(response);
+        
+        this.restaurants = [];
     },
 };
 </script>

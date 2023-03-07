@@ -8,6 +8,7 @@ module.exports = {
         'plugin:vue/recommended',
     ],
     rules: {
+        "no-console": "off",
         "no-trailing-spaces": [ "error", {
             "skipBlankLines": true,
             "ignoreComments": true
