@@ -6,7 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state() {
         return {
-            url: 'http://localhost:9081',
+            url: 'https://comiteo-eats.victormx.com',
         };
     },
     mutations: {

@@ -29,11 +29,11 @@
         
                         <!-- Column -->
                         <div
-                            v-for="restaurant in restaurants"
-                            :key="restaurant.name"
+                            v-for="(restaurant, index) in restaurants"
+                            :key="index"
                             class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/2"
                         >
-                            <restaurant-card />
+                            <restaurant-card :restaurant="restaurant" />
                         </div>
                         <!-- END Column -->
                     </div>
@@ -55,32 +55,12 @@ export default {
     data() {
         return {
             restaurants: [],
-            user: {
-                name: 'Tom Cook',
-                email: 'tom@example.com',
-                imageUrl:
-                    'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-            },
-            navigation: [
-                { name: 'Dashboard', href: '#', current: true },
-                { name: 'Team', href: '#', current: false },
-                { name: 'Projects', href: '#', current: false },
-                { name: 'Calendar', href: '#', current: false },
-                { name: 'Reports', href: '#', current: false },
-            ],
-            userNavigation: [
-                { name: 'Your Profile', href: '#' },
-                { name: 'Settings', href: '#' },
-                { name: 'Sign out', href: '#' },
-            ],
         };
     },
     async created() {
         const response = await getRestaurants();
         
-        console.log(response);
-        
-        this.restaurants = [];
+        this.restaurants = response.data.data;
     },
 };
 </script>
