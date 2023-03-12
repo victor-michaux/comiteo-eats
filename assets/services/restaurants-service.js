@@ -9,3 +9,12 @@ import store from '../store';
 export function getRestaurants() {
     return axios.get(store.getters.getURL + '/api/restaurants');
 }
+
+/**
+ * 
+ * @param {Number} id
+ * @return {Promise}
+ */
+export function getRestaurant(id) {
+    return axios.get(store.getters.getURL + '/api/restaurants/' + id);
+}

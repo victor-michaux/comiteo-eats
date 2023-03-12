@@ -3,9 +3,9 @@
         <!-- Article -->
         <article class="overflow-hidden rounded-lg shadow-lg">
         
-            <a href="#">
+            <router-link :to="{ name: 'restaurants_show', params: { id: restaurant.id } }">
                 <img alt="Placeholder" class="block h-auto w-full" :src="restaurant.cover_picture" />
-            </a>
+            </router-link>
         
             <header class="flex items-center justify-between leading-tight p-2 md:p-4">
                 <h1 class="text-lg">
