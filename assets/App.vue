@@ -1,13 +1,17 @@
 <template>
-    <div>
-        <h1>
-            Hello World
-        </h1>
-    </div>
+    <component :is="layout">
+        <router-view :layout.sync="layout" />
+    </component>
 </template>
 
 <script>
+
 export default {
     name: 'App',
+    data() {
+        return {
+            layout: 'div',
+        };
+    },
 };
 </script>

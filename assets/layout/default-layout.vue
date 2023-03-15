@@ -1,0 +1,53 @@
+<template>
+    <div class="container mx-auto pt-5">
+        <div class="bg-gray-100">
+            <nav class="bg-gray-800">
+                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div class="flex h-16 items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-4">
+                                <router-link to="/">
+                                    <img
+                                        class="h-14 w-16"
+                                        src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/restaurant-logo-design-template-08a68b9418adeb6c8599892284a22ef1_screen.jpg?ts=1599559226"
+                                        alt="Logo restaurant"
+                                    />
+                                </router-link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            
+            <header class="bg-white shadow">
+                <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
+                    <h1 class="text-3xl font-bold tracking-tight text-gray-900">
+                        <router-link to="/">Restaurants</router-link>
+                    </h1>
+                    <Breadcrumb />
+                </div>
+            </header>
+            
+            <main>
+                <div class="mx-auto max-w-4xl py-6 sm:px-6 lg:px-8">
+                    <slot></slot>
+                </div>
+            </main>
+        </div>
+    </div>
+</template>
+
+<script>
+import Breadcrumb from './breadcrumb.vue';
+
+export default {
+    name: 'DefaultLayout',
+    components: {
+        Breadcrumb,
+    },
+};
+</script>
+
+<style scoped>
+
+</style>

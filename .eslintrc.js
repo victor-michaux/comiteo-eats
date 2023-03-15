@@ -8,8 +8,19 @@ module.exports = {
         'plugin:vue/recommended',
     ],
     rules: {
+        "no-console": "off",
+        "no-trailing-spaces": [ "error", {
+            "skipBlankLines": true,
+            "ignoreComments": true
+        }],
         "indent": ["error", 4],
         "vue/html-indent": ["error", 4],
+        "vue/singleline-html-element-content-newline": "off",
+        "vue/multiline-html-element-content-newline": "off",
+        "vue/max-attributes-per-line": ["error", {
+            "singleline": 10,
+            "multiline": 10
+        }],
         "vue/html-self-closing": ["warn", {
             "html": {
                 "void": "always",
