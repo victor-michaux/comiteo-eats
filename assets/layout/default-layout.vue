@@ -6,11 +6,13 @@
                     <div class="flex h-16 items-center justify-between">
                         <div class="flex items-center">
                             <div class="flex-shrink-4">
-                                <img
-                                    class="h-8 w-8"
-                                    src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/restaurant-logo-design-template-08a68b9418adeb6c8599892284a22ef1_screen.jpg?ts=1599559226"
-                                    alt="Logo restaurant"
-                                />
+                                <router-link to="/">
+                                    <img
+                                        class="h-14 w-16"
+                                        src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/restaurant-logo-design-template-08a68b9418adeb6c8599892284a22ef1_screen.jpg?ts=1599559226"
+                                        alt="Logo restaurant"
+                                    />
+                                </router-link>
                             </div>
                         </div>
                     </div>
@@ -22,6 +24,7 @@
                     <h1 class="text-3xl font-bold tracking-tight text-gray-900">
                         <router-link to="/">Restaurants</router-link>
                     </h1>
+                    <Breadcrumb />
                 </div>
             </header>
             
@@ -35,8 +38,13 @@
 </template>
 
 <script>
+import Breadcrumb from './breadcrumb.vue';
+
 export default {
     name: 'DefaultLayout',
+    components: {
+        Breadcrumb,
+    },
 };
 </script>
 

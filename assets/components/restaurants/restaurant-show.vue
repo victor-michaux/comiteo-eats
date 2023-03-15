@@ -3,10 +3,10 @@
         
         <!-- Column -->
         <div
+            v-if="restaurant !== null"
             class="my-1 px-1 w-full lg:my-4 lg:px-4"
         >
             <article class="overflow-hidden rounded-lg shadow-lg">
-        
                 <img alt="Placeholder" class="block h-auto w-full" :src="restaurant.cover_picture" />
         
                 <header class="flex items-center justify-between leading-tight p-2 md:p-4">
@@ -105,7 +105,7 @@ export default {
         // eslint-disable-next-line radix
         const response = await getRestaurant(parseInt(this.$route.params.id));
         
-        this.restaurant = response.data.data
+        this.restaurant = response.data.data;
     },
 };
 </script>

@@ -7,7 +7,7 @@
             :key="index"
             class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/2"
         >
-            <restaurant-card :restaurant="restaurant" />
+            <restaurant-card :restaurant="restaurant"/>
         </div>
         <!-- END Column -->
     </div>
