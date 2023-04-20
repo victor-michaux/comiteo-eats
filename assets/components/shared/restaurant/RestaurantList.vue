@@ -13,7 +13,7 @@
     </div>
 </template>
 <script>
-import RestaurantCard from './RestaurantCard';
+import RestaurantCard from './RestaurantCard.vue';
 
 export default {
     name: 'RestaurantList',

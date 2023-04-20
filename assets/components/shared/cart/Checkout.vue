@@ -107,9 +107,9 @@
 
 <script>
 import formatPrice from '../../../mixins/formatPrice';
-import Button from '../ui/Button';
-import Forms from '../ui/Forms';
-import Delivery from '../delivery/Delivery';
+import Button from '../ui/Button.vue';
+import Forms from '../ui/Forms.vue';
+import Delivery from '../delivery/Delivery.vue';
 
 export default {
     name: 'Checkout',

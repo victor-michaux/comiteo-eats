@@ -18,7 +18,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import Checkbox from '../ui/Checkbox';
+import Checkbox from '../ui/Checkbox.vue';
 
 export default {
     name: 'Delivery',

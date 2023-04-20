@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../pages/Home';
-import Restaurant from '../pages/Restaurant';
-import Cart from '../pages/Cart';
+import Home from '../pages/Home.vue';
+import Restaurant from '../pages/Restaurant.vue';
+import Cart from '../pages/Cart.vue';
 
 Vue.use(VueRouter);
 

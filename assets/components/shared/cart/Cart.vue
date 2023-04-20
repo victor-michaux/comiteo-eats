@@ -79,7 +79,7 @@
 </template>
 <script>
 import formatPrice from '../../../mixins/formatPrice';
-import Button from '../ui/Button';
+import Button from '../ui/Button.vue';
 
 export default {
     name: 'Cart',

@@ -59,7 +59,7 @@
 </template>
 <script>
 import { mapActions } from 'vuex';
-import CustomInput from './CustomInput';
+import CustomInput from './CustomInput.vue';
 
 export default {
     name: 'Forms',

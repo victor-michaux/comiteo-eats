@@ -6,7 +6,7 @@ import router from './router';
 import store from './store';
 
 import App from './App.vue';
-import Header from './components/Layout/Header';
+import Header from './components/Layout/Header.vue';
 
 import './css/main.css';
 

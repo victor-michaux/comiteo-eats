@@ -23,6 +23,7 @@
 </template>
 
 <script>
+// eslint-disable-next-line import/no-unresolved
 import foodTypes from '../../../utils/constants/food';
 
 export default {

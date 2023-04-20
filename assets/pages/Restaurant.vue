@@ -19,8 +19,8 @@
     </div>
 </template>
 <script>
-import RestaurantBanner from '../components/shared/restaurant/RestaurantBanner';
-import RestaurantMenu from '../components/shared/restaurant/RestaurantMenu';
+import RestaurantBanner from '../components/shared/restaurant/RestaurantBanner.vue';
+import RestaurantMenu from '../components/shared/restaurant/RestaurantMenu.vue';
 
 export default {
     name: 'Restaurant',
@@ -38,10 +38,10 @@ export default {
     computed: {
         restaurant() {
             return this.$store.state.restaurant;
-        }
+        },
     },
     mounted() {
-        this.$store.dispatch("getRestaurant", this.id);
+        this.$store.dispatch('getRestaurant', this.id);
     },
 };
 </script>

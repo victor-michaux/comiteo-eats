@@ -4,7 +4,7 @@
     </div>
 </template>
 <script>
-import Checkout from '../components/shared/cart/Checkout';
+import Checkout from '../components/shared/cart/Checkout.vue';
 
 export default {
     name: 'Cart',

@@ -47,8 +47,8 @@
 </template>
 
 <script>
-import Badge from '../ui/Badge';
-import Rating from './Rating';
+import Badge from '../ui/Badge.vue';
+import Rating from './Rating.vue';
 import stringMixin from '../../../mixins/stringMixin';
 
 export default {

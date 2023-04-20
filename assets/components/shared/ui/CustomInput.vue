@@ -18,6 +18,7 @@
 </template>
 
 <script>
+// eslint-disable-next-line import/no-unresolved
 import TYPES from '../../../utils/constants/inputTypes';
 
 export default {

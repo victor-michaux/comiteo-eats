@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import FoodCategory from '../components/shared/foodCategory/FoodCategory';
-import RestaurantList from '../components/shared/restaurant/RestaurantList';
+import FoodCategory from '../components/shared/foodCategory/FoodCategory.vue';
+import RestaurantList from '../components/shared/restaurant/RestaurantList.vue';
 
 export default {
     name: 'Home',
