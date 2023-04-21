@@ -1,5 +1,5 @@
 const Encore = require('@symfony/webpack-encore');
-
+const path = require('path');
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
 if (!Encore.isRuntimeEnvironmentConfigured()) {
@@ -13,7 +13,11 @@ Encore
     .setPublicPath('/build')
     // only needed for CDN's or sub-directory deploy
     // .setManifestKeyPrefix('build/')
-
+    .copyFiles({
+        from: './assets/img',
+        to: 'images/[path][name].[hash:8].[ext]',
+        pattern: /\.(png|jpg|jpeg|gif|svg)$/,
+    })
     .addEntry('app', './assets/app.js')
     .splitEntryChunks()
     .enableSingleRuntimeChunk()
@@ -31,7 +35,6 @@ Encore
     })
     .enableVueLoader(() => {}, { runtimeCompilerBuild: false })
     .enablePostCssLoader()
-
     .enableEslintLoader(() => {
         const options = {};
 
