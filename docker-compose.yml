@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    working_dir: /app
+    volumes:
+      - .:/app
+    environment:
+      PHP_DATE_TIMEZONE: "Europe/Paris"
+      WEB_DOCUMENT_ROOT: /app/public
+      WEB_DOCUMENT_INDEX: index.php
+    ports:
+      - "80:80"
+# docker-compose.yml
